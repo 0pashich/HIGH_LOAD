@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Header, Post } from '@nestjs/common';
+import { Body, CacheInterceptor, Controller, Get, Header, Post, UseInterceptors } from '@nestjs/common';
 
 import { IsNotEmpty } from 'class-validator';
 
@@ -11,6 +11,7 @@ export class CreateNewsDto {
 }
 
 @Controller('news')
+@UseInterceptors(CacheInterceptor)
 export class NewsController {
   @Get()
   async getNews() {
@@ -20,7 +21,7 @@ export class NewsController {
         .map(n => ({
           id: n,
           title: `Важная новость ${n}`,
-          description: (rand => ([...Array(rand(1000))].map(() => rand(10**16).toString(36).substring(rand(10))).join(' ')))(max => Math.ceil(Math.random() * max)),
+          description: (rand => ([...Array(rand(1000))].map(() => rand(10 ** 16).toString(36).substring(rand(10))).join(' ')))(max => Math.ceil(Math.random() * max)),
           createdAt: Date.now()
         }))
 

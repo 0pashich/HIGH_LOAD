@@ -2,7 +2,7 @@ import './news.module.scss';
 import { useEffect, useState } from 'react';
 
 /* eslint-disable-next-line */
-export interface NewsProps {}
+export interface NewsProps { }
 export interface PeaceOfNews {
   id: number,
   title: string,
@@ -30,13 +30,13 @@ export function News(props: NewsProps) {
     <div>
       <h1>Последние новости</h1>
       <ul>
-      {news.map(peaceOfNews => {
-        return <li key={peaceOfNews.id}>
-          <h2>{peaceOfNews.title}</h2>
-          <p>{peaceOfNews.description}</p>
-          <hr/>
-        </li>
-      })}
+        {news.map(peaceOfNews => {
+          return <li key={peaceOfNews.id}>
+            <h2>{peaceOfNews.title}</h2>
+            <p>{peaceOfNews.description}</p>
+            <hr />
+          </li>
+        })}
       </ul>
     </div>
   );
