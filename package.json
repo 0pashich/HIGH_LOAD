@@ -10,8 +10,8 @@
     "build:api": "nx build api",
     "build:web": "nx build web",
     "test": "nx run-many --target=test --all",
-    "test:api": "ng test api",
-    "test:web": "ng test web"
+    "test:api": "nx test api",
+    "test:web": "nx test web"
   },
   "private": true,
   "dependencies": {

@@ -1,3 +1,4 @@
+import { CacheModule } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { NewsController } from './news.controller';
 
@@ -6,6 +7,7 @@ describe('NewsController', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [CacheModule.register({})],
       controllers: [NewsController],
     }).compile();
 

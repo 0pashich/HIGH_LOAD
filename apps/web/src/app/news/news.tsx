@@ -10,11 +10,16 @@ export interface PeaceOfNews {
   createdAt: number
 }
 
+
+
+
 export function News(props: NewsProps) {
   const [news, setNews] = useState([] as PeaceOfNews[]);
   const sortNews = (news: PeaceOfNews[]) => {
     return news.sort((a, b) => a.createdAt - b.createdAt)
   }
+
+  
 
   useEffect(() => {
     fetch('http://localhost:3333/api/news')
