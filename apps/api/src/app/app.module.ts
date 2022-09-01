@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 import { NewsModule } from './news/news.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost:27017/news'), NewsModule],
+  imports: [ NewsModule],
   controllers: [AppController],
   providers: [AppService],
 })

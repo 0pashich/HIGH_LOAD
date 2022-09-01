@@ -5,8 +5,6 @@ export type NewsDocument = News & Document;
 
 @Schema()
 export class News {
-  @Prop()
-  id: number;
 
   @Prop()
   title: string;
@@ -16,7 +14,6 @@ export class News {
 
   @Prop()
   createdAt: Date;
-  static id: string;
 }
 
 export const NewsSchema = SchemaFactory.createForClass(News);

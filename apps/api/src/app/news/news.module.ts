@@ -10,7 +10,8 @@ import { News, NewsSchema } from './schemas/news.schema';
       ttl: 10, // seconds
       max: 10, // maximum number of items in cache
     }),
-    MongooseModule.forFeature([{ name: 'News', schema: NewsSchema }]),],
+    MongooseModule.forRoot('mongodb://localhost:27017/news'),
+    MongooseModule.forFeature([{ name: News.name, schema: NewsSchema }]),],
   controllers: [NewsController],
   providers: [NewsService],
 })
