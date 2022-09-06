@@ -9,6 +9,7 @@
     "build": "nx affected:build --all --configuration=production",
     "build:api": "nx build api",
     "build:web": "nx build web",
+    "build:docker": "docker build -t gb-demo-app .",
     "test": "nx run-many --target=test --all",
     "test:api": "nx test api",
     "test:web": "nx test web"
